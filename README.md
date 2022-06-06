@@ -16,7 +16,7 @@ Technologie jakie zastaną użyte do pracy to:
 - Front-end: React.js
 - Back-end: Express.js
 - Bazy danych: SQL
-- Widoki: Figma
+- UX/UI: Figma
 
 ## Dokumentacja
 Dokumentacja znajduje się w pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Dokumentacja.pdf)
