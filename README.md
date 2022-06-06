@@ -21,8 +21,8 @@ Technologie jakie zastaną użyte do pracy to:
 ## Dokumentacja
 Dokumentacja znajduje się w pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Dokumentacja.pdf)
 
-Można także pobrac plik Word i do niego zajrzeć. Znajduje się w folderze Dokumentacja
-W tym samym folderze znajduje sie plik PDF
+Można także pobrac plik Word i do niego zajrzeć. Znajduje się w folderze Dokumentacja.
+W tym samym folderze znajduje sie plik PDF.
 
 ## Pobranie i Klonowanie
 Można pobrać repozytorium na dwa sposoby:
