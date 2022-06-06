@@ -3,10 +3,11 @@ Temat pracy dyplomowej polegający na stworzeniu aplikacji internetowej czasopis
 
 ## Spis treści
  * [Krótki opis repozytorium](#krótki-opis-repozytorium)
+ * [Dokumentacja](#dokumentacja)
  * [Pobranie i klonowanie](#pobranie-i-klonowanie)
 
 ## Krótki opis repozytorium
-W tym repozytorium powstaje aplikacja internetowa czasopisma naukowego
+W tym repozytorium powstaje aplikacja internetowa czasopisma naukowego, która umozliwi wysyłanie publikacji przez autora, a nastepnie sprawdzenie przez recenzentów.
 
 Technologie jakie zastaną użyte do pracy to:
 
@@ -17,6 +18,7 @@ Technologie jakie zastaną użyte do pracy to:
 
 ## Dokumentacja
 Dokumentacja znajduje się w pliku PDF pod tym linkiem -> LINK
+
 ## Pobranie i Klonowanie
 Można pobrać repozytorium na dwa sposoby:
 
