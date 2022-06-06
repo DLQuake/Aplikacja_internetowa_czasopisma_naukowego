@@ -1,5 +1,5 @@
 # Aplikacja_internetowa_czasopisma_naukowego
-Temat pracy dyplomowej polegający na stworzeniu aplikacji internetowej czasopisma naukowego
+Temat pracy inżynierskiej polegający na stworzeniu aplikacji internetowej czasopisma naukowego
 
 ## Spis treści
  * [Krótki opis repozytorium](#krótki-opis-repozytorium)
@@ -9,6 +9,8 @@ Temat pracy dyplomowej polegający na stworzeniu aplikacji internetowej czasopis
 ## Krótki opis repozytorium
 W tym repozytorium powstaje aplikacja internetowa czasopisma naukowego, która umozliwi wysyłanie publikacji przez autora, a nastepnie sprawdzenie jej przez recenzentów.
 
+Praca inżynieraska jest robiona pod kierunkiem [prof. dr hab. Aleksandra Denisiuka](http://wmii.uwm.edu.pl/~denisjuk/)
+
 Technologie jakie zastaną użyte do pracy to:
 
 - Front-end: React.js
@@ -17,7 +19,7 @@ Technologie jakie zastaną użyte do pracy to:
 - Widoki: Figma
 
 ## Dokumentacja
-Dokumentacja znajduje się w pliku PDF pod tym linkiem -> LINK
+Dokumentacja znajduje się w pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Dokumentacja.pdf)
 
 Można także pobrac plik Word i do niego zajrzeć. Znajduje się w folderze Dokumentacja
 W tym samym folderze znajduje sie plik PDF
