@@ -15,10 +15,10 @@ Praca inżynieraska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka pr
 
 ## Technologie jakie zastaną użyte do pracy
 
-- Front-end: React.js
-- Back-end: Express.js
+- Front-end: [React.js](https://reactjs.org/)
+- Back-end: [Express.js](http://expressjs.com/)
 - Bazy danych: SQL
-- UX/UI: Figma
+- UX/UI: [Figma](https://www.figma.com/file/AApCH9HVVk1C8e8Gfezebe/Aplikacja-internetowa-czasopisma-naukowego?node-id=0%3A1)
 
 ## Koncepcja aplikacji
 Do wykonania jest projekt aplikacji internetowej czasopisma naukowego. <br>
