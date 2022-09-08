@@ -11,7 +11,7 @@ Temat pracy inżynierskiej polegający na stworzeniu aplikacji internetowej czas
 ## Krótki opis repozytorium
 W tym repozytorium powstaje aplikacja internetowa czasopisma naukowego, która umozliwi wysyłanie publikacji przez autora, a nastepnie sprawdzenie jej przez recenzentów.
 
-Praca inżynieraska jest robiona pod kierunkiem [prof. dr hab. Aleksandra Denisiuka](http://wmii.uwm.edu.pl/~denisjuk/)
+Praca inżynieraska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka prof. UWM](http://wmii.uwm.edu.pl/~denisjuk/)
 
 ## Technologie jakie zastaną użyte do pracy
 
