@@ -21,11 +21,11 @@ Praca inżynieraska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka pr
 - UX/UI: [Figma](https://www.figma.com/file/AApCH9HVVk1C8e8Gfezebe/Aplikacja-internetowa-czasopisma-naukowego?node-id=0%3A1)
 
 ## Koncepcja aplikacji
-Do wykonania jest projekt aplikacji internetowej czasopisma naukowego. <br>
+Do wykonania jest projekt aplikacji internetowej czasopisma naukowego.
 Założenie aplikacji jest takie, aby wyeliminowanie potrzeby wizyt w wydawnictwie, ulepszenie
 procesu publikacji i jego maksymalne przyspieszenie. Obecnie wiedza w każdej
 dziedzinie rozwija się bardzo szybko. Opóźnienia w publikacjach nie są więc
-pożądane.<br>
+pożądane.
 W tym celu powstaje właśnie ta apliakcje by rozwiązać problem
 
 * Aktorzy
