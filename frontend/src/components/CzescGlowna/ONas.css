@@ -1,0 +1,26 @@
+.main {
+    width: 100%;
+    background-color: #244DDE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    padding: 40px;
+    text-align: justify;
+}
+
+.main__content-title {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.main__content-text {
+    font-size: 20px;
+}
