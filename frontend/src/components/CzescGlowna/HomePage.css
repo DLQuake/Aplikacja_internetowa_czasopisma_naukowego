@@ -1,0 +1,18 @@
+.main {
+    width: 100%;
+    background-color: #244DDE;
+}
+
+.main__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 40px;
+}
+
+.main__content-item {
+    width: 400px;
+    height: 500px;
+    background-color: #ffffff;
+}
