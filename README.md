@@ -1,4 +1,4 @@
-# Aplikacja_internetowa_czasopisma_naukowego
+# Aplikacja internetowa czasopisma naukowego
 Temat pracy inżynierskiej polegający na stworzeniu aplikacji internetowej czasopisma naukowego
 
 ## Spis treści
