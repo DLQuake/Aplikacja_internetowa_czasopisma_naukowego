@@ -15,10 +15,10 @@ function Header() {
                 <ul className="navigation__list">
                     <li><Link to="/" className="navigation__list-item">Strona Główna</Link></li>
                     <li><Link to="/o_nas" className="navigation__list-item">O nas</Link></li>
-                    <li><Link to="/informacje_dla_autorów" className="navigation__list-item">Informacje dla autorów</Link></li>
+                    <li><Link to="/informacje_dla_autorow" className="navigation__list-item">Informacje dla autorów</Link></li>
                     <li><Link to="/kontakt" className="navigation__list-item">Kontakt</Link></li>
-                    <li><Link to="/zarejestruj_się" className="navigation__list-item">Zarejestruj się</Link></li>
-                    <li><Link to="/zaloguj_się" className="navigation__list-item">Zaloguj się</Link></li>
+                    <li><Link to="/zarejestruj_sie" className="navigation__list-item">Zarejestruj się</Link></li>
+                    <li><Link to="/zaloguj_sie" className="navigation__list-item">Zaloguj się</Link></li>
                 </ul>
             </nav>
 
