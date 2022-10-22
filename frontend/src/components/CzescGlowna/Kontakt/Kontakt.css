@@ -1,4 +1,4 @@
-.main {
+.c-Kontakt-main {
     width: 100%;
     background-color: #244DDE;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.main__content {
+.c-Kontakt-main__content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
     text-align: justify;
 }
 
-.main__content-kontakt {
+.c-Kontakt-main__content-kontakt {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,12 +26,12 @@
     padding: 40px;
 }
 
-.main__content-title {
+.c-Kontakt-main__content-title {
     font-size: 48px;
     font-weight: 400;
 }
 
-.main__content-text {
+.c-Kontakt-main__content-text {
     font-size: 20px;
     text-align: center;
 }

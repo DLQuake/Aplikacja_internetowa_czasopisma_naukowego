@@ -6,24 +6,24 @@ function HomePage() {
     return (
         <div className="App">
             <Header></Header>
-            <main className="main">
-                <div className="main__content">
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
-                    <Link className="main__content-item" to="#"></Link>
+            <main className="c-HomePage-main">
+                <div className="c-HomePage-main__content">
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
+                    <Link className="c-HomePage-main__content-item" to="#"></Link>
                 </div>
             </main>
         </div>

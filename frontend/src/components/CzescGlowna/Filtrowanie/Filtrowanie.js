@@ -5,8 +5,8 @@ function Filtrowanie() {
     return (
         <div className="App">
             <Header></Header>
-            <main className="main">
-                <div className="main__content">
+            <main className="c-Filtrowanie-main">
+                <div className="c-Filtrowanie-main__content">
                 </div>
             </main>
         </div>

@@ -5,11 +5,11 @@ function ONas() {
     return (
         <div className="App">
             <Header></Header>
-            <main className="main">
-                <div className="main__content">
-                    <div className="main__content-container">
-                        <h1 className="main__content-title">INFORMACJE DLA AUTORÓW</h1>
-                        <div className="main__content-text">
+            <main className="c-InformacjeDlaAutorow-main">
+                <div className="c-InformacjeDlaAutorow-main__content">
+                    <div className="c-InformacjeDlaAutorow-main__content-container">
+                        <h1 className="c-InformacjeDlaAutorow-main__content-title">INFORMACJE DLA AUTORÓW</h1>
+                        <div className="c-InformacjeDlaAutorow-main__content-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae urna non sem imperdiet suscipit. Integer id mauris risus. Aliquam odio diam, interdum vel varius nec, sagittis sed augue. Nam vehicula rutrum molestie. Curabitur egestas, turpis molestie placerat faucibus, leo felis sagittis ante, eget venenatis massa est viverra dui. Ut vestibulum eros magna, sit amet eleifend tellus bibendum feugiat. Mauris placerat mauris quis eros tristique pulvinar. Aliquam luctus vitae diam quis tincidunt.
                             <br />
                             <br />

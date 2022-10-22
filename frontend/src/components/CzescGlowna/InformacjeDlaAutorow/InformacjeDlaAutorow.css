@@ -1,4 +1,4 @@
-.main {
+.c-InformacjeDlaAutorow-main {
     width: 100%;
     background-color: #244DDE;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.main__content {
+.c-InformacjeDlaAutorow-main__content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
     text-align: justify;
 }
 
-.main__content-container {
+.c-InformacjeDlaAutorow-main__content-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,11 +26,11 @@
     padding: 40px;
 }
 
-.main__content-title {
+.c-InformacjeDlaAutorow-main__content-title {
     font-size: 48px;
     font-weight: 400;
 }
 
-.main__content-text {
+.c-InformacjeDlaAutorow-main__content-text {
     font-size: 20px;
 }
