@@ -1,0 +1,14 @@
+.c-Recenzent {
+    background-color: #244DDE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+}
+
+.c-Recenzent__main {
+    background-color: #ffffff;
+    width: 70%;
+    border-radius: 20px;
+    padding: 40px;
+}
