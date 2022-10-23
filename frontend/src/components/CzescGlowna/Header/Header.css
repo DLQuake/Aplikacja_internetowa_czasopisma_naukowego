@@ -36,12 +36,15 @@
 }
 
 .navigation__list-item {
+    width: 230px;
     background-color: #ffffff;
-    padding: 10px 40px;
+    padding: 10px 0px;
     border: 1px solid #000000;
     border-radius: 20px;
     color: #000000;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 .navigation__list-item:hover {
