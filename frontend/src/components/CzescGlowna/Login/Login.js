@@ -10,7 +10,7 @@ function ONas() {
                 <div className="c-Login-main__content">
                     <div className="c-Login-main__content-register">
                         <from className="c-Login-main__content-register-form">
-                            <h1 className="c-Login-main__content-register-form-title">Zarejestruj się do systemu</h1>
+                            <h1 className="c-Login-main__content-register-form-title">Zaloguj się do systemu</h1>
                             <input className="c-Login-main__content-register-form-item" type="text" name="login" placeholder="Login" />
                             <input className="c-Login-main__content-register-form-item" type="password" placeholder="Hasło" />
                             <input className="c-Login-main__content-register-form-item c-Login-main__content-register-form--button" value={'Zaloguj się'} type="submit" />
