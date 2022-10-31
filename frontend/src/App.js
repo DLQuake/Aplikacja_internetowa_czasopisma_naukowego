@@ -39,7 +39,7 @@ function App() {
 
         <Route path="/redaktor" element={<Redaktor />} />
 
-        <Route path="/wydawnctwo" element={<Wydawnictwo />} />
+        <Route path="/wydawnictwo" element={<Wydawnictwo />} />
       </Routes>
     </Router>
   );

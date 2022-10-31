@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./AsideMenu.css"
 
+function clearAll() {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+}
+
 function AsideMenu() {
 
     return (
@@ -11,7 +16,7 @@ function AsideMenu() {
                 <div className="c-AsideMenu__logo-zalogowanyJako">AUTOR</div>
             </div>
             <ul className="c-AsideMenu__menu">
-                <li><Link className='c-AsideMenu__menu-item' to="/">Wyloguj się</Link></li>
+                <li onClick={clearAll}><Link className='c-AsideMenu__menu-item' to="/">Wyloguj się</Link></li>
                 <li><Link className='c-AsideMenu__menu-item' to="/autor">Główny panel</Link></li>
                 <li><Link className='c-AsideMenu__menu-item' to="/dodaj_publikacje">Dodaj publikacje</Link></li>
             </ul>
