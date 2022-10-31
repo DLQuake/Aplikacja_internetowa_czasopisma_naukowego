@@ -12,7 +12,7 @@ function AsideMenu() {
             </div>
             <ul className="c-AsideMenu__menu">
                 <li><Link className='c-AsideMenu__menu-item' to="/">Wyloguj się</Link></li>
-                <li><Link className='c-AsideMenu__menu-item' to="/autor">Główny panel</Link></li>
+                <li><Link className='c-AsideMenu__menu-item' to="/recenzent">Główny panel</Link></li>
                 <li><Link className='c-AsideMenu__menu-item' to="/publikacje">Publikacje</Link></li>
             </ul>
         </aside>
