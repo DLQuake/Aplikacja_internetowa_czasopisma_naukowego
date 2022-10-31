@@ -32,7 +32,7 @@ function Register() {
             <main className="c-Register-main">
                 <div className="c-Register-main__content">
                     <div className="c-Register-main__content-register">
-                        <from className="c-Register-main__content-register-form">
+                        <form className="c-Register-main__content-register-form" method="POST" action="http://localhost:3001/auth_register">
                             <h1 className="c-Register-main__content-register-form-title">Zarejestruj się do systemu</h1>
                             <input className="c-Register-main__content-register-form-item" type="text" placeholder="Imię" value={imie} onChange={(e) => {setImie(e.target.value);}}/>
                             <input className="c-Register-main__content-register-form-item" type="text" placeholder="Nazwisko" value={nazwisko} onChange={(e) => {setNazwisko(e.target.value);}}/>
@@ -46,7 +46,7 @@ function Register() {
                                 <div className="c-Register-main__content-register-form-login-text">Posiadasz konto?</div>
                                 <Link className="c-Register-main__content-register-form-login-link" to="/zaloguj_sie">Zaloguj się</Link>
                             </div>
-                        </from>
+                        </form>
                     </div>
                 </div>
             </main>
