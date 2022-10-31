@@ -17,7 +17,7 @@ Praca inżynieraska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka pr
 
 - Front-end: [React.js](https://reactjs.org/)
 - Back-end: [Express.js](http://expressjs.com/)
-- Bazy danych: SQL
+- Bazy danych: [MySQL](https://www.mysql.com/)
 - UX/UI: [Figma](https://www.figma.com/file/AApCH9HVVk1C8e8Gfezebe/Aplikacja-internetowa-czasopisma-naukowego?node-id=0%3A1)
 
 ## Koncepcja aplikacji
