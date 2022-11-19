@@ -8,7 +8,7 @@
 
 * plik .env
     ```
-        APP_PORT = Dowoolny port np: 3001
+        APP_PORT = Dowolny port np: 3001
         SESS_SECRET = losowy ciag znaków
     ```
 
