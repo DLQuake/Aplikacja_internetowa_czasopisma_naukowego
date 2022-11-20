@@ -21,6 +21,28 @@ const Publikacje = db.define('publikacje', {
             len: [3, 100]
         }
     },
+    opis: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+            len: [3, 255]
+        }
+    },
+    plik: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    },
+    url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    },
     uzytkownikId: {
         type: DataTypes.INTEGER,
         allowNull: false,
