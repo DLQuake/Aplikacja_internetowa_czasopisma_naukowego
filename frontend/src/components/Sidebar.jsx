@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoPerson, IoPricetag, IoHome, IoLogOut } from "react-icons/io5";
+import { IoPerson, IoLibrary, IoHome, IoLogOut, IoAddOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
 					</li>
 					<li>
 						<NavLink to={"/publikacje"}>
-							<IoPricetag /> Publikacje
+							<IoLibrary /> Publikacje
 						</NavLink>
 					</li>
 				</ul>
@@ -38,6 +38,18 @@ const Sidebar = () => {
 							<li>
 								<NavLink to={"/users"}>
 									<IoPerson /> Użytkownicy
+								</NavLink>
+							</li>
+						</ul>
+					</div>
+				)}
+				{user && user.role === "autor" && (
+					<div>
+						<p className="menu-label">Autor</p>
+						<ul className="menu-list">
+							<li>
+								<NavLink to={"/publikacje/add"}>
+									<IoAddOutline /> Dodaj Publikacje
 								</NavLink>
 							</li>
 						</ul>

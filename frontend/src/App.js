@@ -9,6 +9,8 @@ import InformacjeDlaAutorow from "./pages/InformacjeDlaAutorow";
 import Kontakt from "./pages/Kontakt";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import AddPublikacje from "./pages/AddPublikacje";
+import Publiakcje from "./pages/Publiakcje";
 
 function App() {
 	return (
@@ -25,6 +27,8 @@ function App() {
 					<Route path="/users" element={<Users />} />
 					<Route path="/users/add" element={<AddUser />} />
 					<Route path="/users/edit/:id" element={<EditUser />} />
+					<Route path="/publikacje" element={<Publiakcje />} />
+					<Route path="/publikacje/add" element={<AddPublikacje />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
