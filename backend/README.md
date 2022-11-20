@@ -17,7 +17,7 @@ Wszytko robimy w folderze backend
 
 * Stworzenie bazy danych w MySQL o nazwie "czasopisma_naukowe". Polecam do tego pakiet [XAMPP](https://www.apachefriends.org/pl/index.html)
 
-* Odkomentowanie linijki 13, 14 oraz 15 w celu stworzenia tabel, a po uruchomieniu backendu pożniej zakomentować te same linijki, aby modele nie stworzyły się ponownie, bo to usuwa tym samym dane z tabeli.
+* Odkomentowanie linijki 13, 14 oraz 15 w celu stworzenia tabel, a po uruchomieniu backendu pożniej zakomentować te same linijki
 
 ## Uruchomienie backendu
 
