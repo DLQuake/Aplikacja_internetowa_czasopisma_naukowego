@@ -4,21 +4,21 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 const PubliakcjeList = () => {
-	const [products, setProducts] = useState([]);
+	const [publikacje, setPublikacje] = useState([]);
 	const { user } = useSelector((state) => state.auth);
 
 	useEffect(() => {
-		getProducts();
+		getPublikacje();
 	}, []);
 
-	const getProducts = async () => {
-		const response = await axios.get("http://localhost:3001/publikacje");
-		setProducts(response.data);
+	const getPublikacje = async () => {
+		const response = await axios.get("http://localhost:3001/publications");
+		setPublikacje(response.data);
 	};
 
-	const deleteProduct = async (productId) => {
-		await axios.delete(`http://localhost:3001/publikacje/${productId}`);
-		getProducts();
+	const deletePublikacje = async (publikacjeId) => {
+		await axios.delete(`http://localhost:3001/publications/${publikacjeId}`);
+		getPublikacje();
 	};
 
 	return (
@@ -37,21 +37,23 @@ const PubliakcjeList = () => {
 						<th>Status</th>
 						<th>Tytuł publikacji</th>
 						<th>Opis publikacji</th>
+						<th>Plik</th>
 						<th>Stworzone przez</th>
 						<th>Opcje</th>
 					</tr>
 				</thead>
 				<tbody>
-					{products.map((product, index) => (
-						<tr key={product.uuid}>
+					{publikacje.map((publikacje, index) => (
+						<tr key={publikacje.uuid}>
 							<td>{index + 1}</td>
-							<td>{product.tytul}</td>
-							<td>{product.tytul}</td>
-							<td>{product.opis}</td>
-							<td>{product.user.login}</td>
+							<td>{publikacje.status}</td>
+							<td>{publikacje.tytul}</td>
+							<td>{publikacje.opis}</td>
+							<td><a href={publikacje.url}>PLIK</a></td>
+							<td>{publikacje.user.login}</td>
 							<td>
-								<Link to={`/products/edit/${product.uuid}`} className="button is-small is-info">Edit</Link>
-								<button onClick={() => deleteProduct(product.uuid)} className="button is-small is-danger">Delete</button>
+								<Link to={`/publikacje/edit/${publikacje.uuid}`} className="button is-small is-info">Edit</Link>
+								<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Delete</button>
 							</td>
 						</tr>
 					))}

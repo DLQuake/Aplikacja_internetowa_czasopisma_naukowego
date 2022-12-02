@@ -10,19 +10,19 @@ const Userlist = () => {
 	}, []);
 
 	const getUsers = async () => {
-		const response = await axios.get("http://localhost:3001/uzytkownicy");
+		const response = await axios.get("http://localhost:3001/users");
 		setUsers(response.data);
 	};
 
-	const deleteUser = async (userId) => {
-		await axios.delete(`http://localhost:3001/uzytkownicy/${userId}`);
+	const deleteUser = async (uzytkownikId) => {
+		await axios.delete(`http://localhost:3001/users/${uzytkownikId}`);
 		getUsers();
 	};
 
 	return (
 		<div>
-			<h1 className="title">Users</h1>
-			<h2 className="subtitle">List of Users</h2>
+			<h1 className="title">Użytkownicy</h1>
+			<h2 className="subtitle">Lista użytkowników</h2>
 			{/* <Link to="/users/add" className="button is-primary mb-2">Dodaj nowego użytkownika</Link> */}
 			<table className="table is-striped is-fullwidth">
 				<thead>

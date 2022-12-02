@@ -19,7 +19,7 @@ const Navbar = () => {
 			<nav className="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
 				<div className="navbar-brand">
 					<NavLink to="/dashboard" className="navbar-item">
-						LOGO
+						Panel Główny
 					</NavLink>
 
 					<a href="/#" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" >

@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import AddPublikacje from "./pages/AddPublikacje";
 import Publiakcje from "./pages/Publiakcje";
+import EditPublikacje from "./pages/EditPublikacje";
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/users/edit/:id" element={<EditUser />} />
 					<Route path="/publikacje" element={<Publiakcje />} />
 					<Route path="/publikacje/add" element={<AddPublikacje />} />
+					<Route path="/publikacje/edit/:id" element={<EditPublikacje />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

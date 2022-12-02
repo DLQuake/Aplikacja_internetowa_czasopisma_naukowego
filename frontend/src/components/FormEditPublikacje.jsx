@@ -1,14 +1,34 @@
-import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const FormAddPublikacje = () => {
+const FormEditPublikacje = () => {
+    const fileInput = document.querySelector('#file-js-example input[type=file]');
+    onchange = () => {
+        if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#file-js-example .file-name');
+            fileName.textContent = fileInput.files[0].name;
+        }
+    }
+
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
     const [file, setFile] = useState("");
     const [preview, setPreview] = useState("");
     const [msg, setMsg] = useState("");
+    const { id } = useParams();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const getPublicationById = async () => {
+            const response = await axios.get(`http://localhost:3001/publications/${id}`);
+            setTitle(response.data.tytul);
+            setOpis(response.data.opis);
+            setFile(response.data.plik);
+        };
+        getPublicationById();
+    }, [id]);
+
 
     const LoadDocument = (e) => {
         const document = e.target.files[0];
@@ -16,14 +36,14 @@ const FormAddPublikacje = () => {
         setPreview(URL.createObjectURL(document));
     };
 
-    const CreatePublication = async (e) => {
+    const updatePublication = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("file", file);
         formData.append("opis", opis);
         formData.append("title", title);
         try {
-            await axios.post("http://localhost:3001/publications", formData, {
+            await axios.patch(`http://localhost:3001/publications/${id}`, formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },
@@ -38,11 +58,11 @@ const FormAddPublikacje = () => {
 
     return (
         <div>
-            <h1 className="title">Dodaj nową publikacje</h1>
+            <h1 className="title">Edytuj publikacje</h1>
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
-                        <form onSubmit={CreatePublication}>
+                        <form onSubmit={updatePublication}>
                             <p className="has-text-centered">{msg}</p>
                             <div className="field">
                                 <label className="label">Tytuł publikacji</label>
@@ -73,17 +93,21 @@ const FormAddPublikacje = () => {
                                 </label>
                             </div>
 
-                            {preview ? (<object width="100%" height="800" aria-label="preview PDF" data={preview} type="application/pdf"></object>) : ("")}
+                            {preview ? (
+                                <object width="100%" height="800" aria-label="preview PDF" data={preview} type="application/pdf"></object>
+                            ) : (
+                                <div className="has-text-centered">Publikacja: {file}</div>
+                            )}
 
-                            <div className="field mt-5 is-large is-grouped is-grouped-centered">
+                            <div className="field mt-5 is-grouped is-grouped-centered">
                                 <button type="submit" className="button is-success p-5">Wyślij do recenzenta</button>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
-export default FormAddPublikacje;
+export default FormEditPublikacje;
