@@ -176,11 +176,11 @@ export const updatePublication = async (req, res) => {
     }
 
     const name = req.body.title;
-    const { opis } = req.body;
+    const { status, opis } = req.body;
     const url = `${req.protocol}://${req.get("host")}/publications/${fileName}`;
 
     try {
-        await Publications.update({ tytul: name, opis: opis, plik: fileName, url: url }, {
+        await Publications.update({status: status, tytul: name, opis: opis, plik: fileName, url: url }, {
             where: {
                 id: publication.id
             }
