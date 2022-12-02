@@ -1,4 +1,4 @@
-import Uzytkownik from "../models/UzytkownikModel.js";
+import User from "../models/UserModel.js";
 import argon2 from "argon2";
 
 export const Register = async (req, res) => {
@@ -6,7 +6,7 @@ export const Register = async (req, res) => {
     if (password !== confPassword) return res.status(400).json({ msg: "Hasło oraz powtórz hasło nie są równe" });
     const hashPassword = await argon2.hash(password);
     try {
-        await Uzytkownik.create({
+        await User.create({
             imie: imie,
             nazwisko: nazwisko,
             email: email,
@@ -21,7 +21,7 @@ export const Register = async (req, res) => {
 }
 
 export const Login = async (req, res) => {
-    const user = await Uzytkownik.findOne({
+    const user = await User.findOne({
         where: {
             login: req.body.login
         }
@@ -43,7 +43,7 @@ export const Me = async (req, res) => {
     if (!req.session.userId) {
         return res.status(401).json({ msg: "Zaloguj się do konta" });
     }
-    const user = await Uzytkownik.findOne({
+    const user = await User.findOne({
         attributes: ['uuid', 'imie', 'nazwisko', 'email', 'login', 'role'],
         where: {
             uuid: req.session.userId

@@ -1,22 +1,29 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
-import Uzytkownik from "./UzytkownikModel.js";
+import Users from "./UserModel.js";
 
-const { DataTypes } = Sequelize;
+const {DataTypes} = Sequelize;
 
-const Publikacje = db.define('publikacje', {
-    uuid: {
+const Publications = db.define('publications',{
+    uuid:{
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        validate:{
+            notEmpty: true
+        }
+    },
+    status: {
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
             notEmpty: true
         }
     },
-    tytul: {
+    tytul:{
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
+        validate:{
             notEmpty: true,
             len: [3, 100]
         }
@@ -43,18 +50,18 @@ const Publikacje = db.define('publikacje', {
             notEmpty: true,
         }
     },
-    uzytkownikId: {
+    userId:{
         type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
+        validate:{
             notEmpty: true
         }
     }
-}, {
+},{
     freezeTableName: true
 });
 
-Uzytkownik.hasMany(Publikacje);
-Publikacje.belongsTo(Uzytkownik, { foreignKey: "uzytkownikId" })
+Users.hasMany(Publications);
+Publications.belongsTo(Users, {foreignKey: 'userId'});
 
-export default Publikacje;
+export default Publications;
