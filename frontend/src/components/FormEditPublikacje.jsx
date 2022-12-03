@@ -3,14 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const FormEditPublikacje = () => {
-    const fileInput = document.querySelector('#file-js-example input[type=file]');
-    onchange = () => {
-        if (fileInput.files.length > 0) {
-            const fileName = document.querySelector('#file-js-example .file-name');
-            fileName.textContent = fileInput.files[0].name;
-        }
-    }
-
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
     const [file, setFile] = useState("");
