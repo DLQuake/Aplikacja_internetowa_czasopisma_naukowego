@@ -25,7 +25,6 @@ const Publications = db.define('publications',{
         allowNull: false,
         validate:{
             notEmpty: true,
-            len: [3, 100]
         }
     },
     opis: {
@@ -33,7 +32,6 @@ const Publications = db.define('publications',{
         allowNull: false,
         validate: {
             notEmpty: true,
-            len: [3, 255]
         }
     },
     plik: {
@@ -56,7 +54,14 @@ const Publications = db.define('publications',{
         validate:{
             notEmpty: true
         }
-    }
+    },
+    uwagi:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate:{
+            notEmpty: true,
+        }
+    },
 },{
     freezeTableName: true
 });

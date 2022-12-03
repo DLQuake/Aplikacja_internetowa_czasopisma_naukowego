@@ -22,14 +22,41 @@ export const ShowPublicationsOnHomePage = async (req, res) => {
     }
 }
 
+export const ShowPublicationsOnHomePageById = async (req, res) => {
+    try {
+        const publication = await Publications.findOne({
+            where: {
+                uuid: req.params.id
+            }
+        });
+        if (!publication) return res.status(404).json({ msg: "Nie znaleziono publikacji" });
+        const response = await Publications.findOne({
+            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
+            where: {
+                status: "Opublikowany",
+                id: publication.id
+            },
+            include: [{
+                model: User,
+                attributes: ['uuid', 'imie', 'nazwisko', 'email', 'login', 'role']
+            }]
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+
 export const getPublications = async (req, res) => {
     try {
         let response;
         if (req.role === "wydawnictwo") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
                 where: {
-                    status: "Do publikacji",
+                    status: {
+                        [Op.or]: ["Do publikacji", "Opublikowany"]
+                    }
                 },
                 include: [{
                     model: User,
@@ -38,7 +65,7 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "redaktor") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
                 where: {
                     status: "Wysłany do redaktora",
                 },
@@ -49,9 +76,11 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "recenzent") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
                 where: {
-                    status: "Wysłany do recenzji",
+                    status: {
+                        [Op.or]: ["Wysłany do recenzji", "Odesłany do Autora"]
+                    }
                 },
                 include: [{
                     model: User,
@@ -60,7 +89,7 @@ export const getPublications = async (req, res) => {
             });
         } else {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
                 where: {
                     userId: req.userId
                 },
@@ -85,29 +114,16 @@ export const getPublicationById = async (req, res) => {
         });
         if (!publication) return res.status(404).json({ msg: "Nie znaleziono publikacji" });
         let response;
-        if (req.role === "wydawnictwo") {
-            response = await Publications.findOne({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
-                where: {
-                    id: publication.id
-                },
-                include: [{
-                    model: User,
-                    attributes: ['uuid', 'imie', 'nazwisko', 'email', 'login', 'role']
-                }]
-            });
-        } else {
-            response = await Publications.findOne({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url'],
-                where: {
-                    [Op.and]: [{ id: publication.id }, { userId: req.userId }]
-                },
-                include: [{
-                    model: User,
-                    attributes: ['uuid', 'imie', 'nazwisko', 'email', 'login', 'role']
-                }]
-            });
-        }
+        response = await Publications.findOne({
+            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+            where: {
+                id: publication.id
+            },
+            include: [{
+                model: User,
+                attributes: ['uuid', 'imie', 'nazwisko', 'email', 'login', 'role']
+            }]
+        });
         res.status(200).json(response);
     } catch (error) {
         res.status(500).json({ msg: error.message });
@@ -137,7 +153,8 @@ export const createPublication = (req, res) => {
                 opis: opis,
                 plik: fileName,
                 url: url,
-                userId: req.userId
+                userId: req.userId,
+                uwagi: "Wypełnia recenzent"
             });
             res.status(201).json({ msg: "Publikacja dodana poprawnie" });
         } catch (error) {
@@ -176,11 +193,11 @@ export const updatePublication = async (req, res) => {
     }
 
     const name = req.body.title;
-    const { status, opis } = req.body;
+    const { status, opis, uwagi } = req.body;
     const url = `${req.protocol}://${req.get("host")}/publications/${fileName}`;
 
     try {
-        await Publications.update({status: status, tytul: name, opis: opis, plik: fileName, url: url }, {
+        await Publications.update({status: status, tytul: name, opis: opis, plik: fileName, url: url, uwagi: uwagi}, {
             where: {
                 id: publication.id
             }
