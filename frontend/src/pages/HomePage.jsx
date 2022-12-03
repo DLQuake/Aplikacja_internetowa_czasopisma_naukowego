@@ -2,16 +2,17 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import NavbarHome from "../components/NavbarHome";
 
-const HomePage = () => {
+const Publikacja = () => {
     const [publikacje, setPublikacje] = useState([]);
 
     useEffect(() => {
-        getPublikacje();
+        ShowPublicationsOnHomePage();
     }, []);
 
-    const getPublikacje = async () => {
+    const ShowPublicationsOnHomePage = async () => {
         const response = await axios.get("http://localhost:3001/allpublications");
         setPublikacje(response.data);
     };
@@ -21,12 +22,12 @@ const HomePage = () => {
             <section className="section has-background-success">
                 <div className="columns">
                     {publikacje.map((publikacje) => (
-                        <a href="/#" className="column has-text-dark is-one-quarter" key={publikacje.uuid}>
-                            <p className="notification has-background-white has-text-centered">
-                                <div>{publikacje.tytul}</div>
-                                <div><a href={publikacje.url}>PLIK</a></div>
+                        <Link to={`/publikacja/${publikacje.uuid}`} className="column has-text-dark is-one-quarter">
+                            <p className="notification has-background-white has-text-justified">
+                                <div className="title">{publikacje.tytul}</div>
+                                <div className="text">{publikacje.opis}</div>
                             </p>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </section>
@@ -34,4 +35,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default Publikacja;

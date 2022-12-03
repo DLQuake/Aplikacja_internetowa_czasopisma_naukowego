@@ -39,6 +39,7 @@ const PubliakcjeList = () => {
 						<th>Opis publikacji</th>
 						<th>Plik</th>
 						<th>Stworzone przez</th>
+						<th>Uwagi</th>
 						<th>Opcje</th>
 					</tr>
 				</thead>
@@ -51,9 +52,26 @@ const PubliakcjeList = () => {
 							<td>{publikacje.opis}</td>
 							<td><a href={publikacje.url}>PLIK</a></td>
 							<td>{publikacje.user.login}</td>
+							<td>{publikacje.uwagi}</td>
 							<td>
-								<Link to={`/publikacje/edit/${publikacje.uuid}`} className="button is-small is-info">Edit</Link>
-								<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Delete</button>
+								{user && user.role === "autor" && (
+									<div className="Option">
+										<Link to={`/publikacje/edit/${publikacje.uuid}`} className="button is-small is-info">Edytuj</Link>
+										<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
+									</div>
+								)}
+								{user && user.role === "recenzent" && (
+									<Link to={`/publikacja/editStatus/${publikacje.uuid}`} className="button is-small is-info">Recenzja publikacji</Link>
+								)}
+								{user && user.role === "redaktor" && (
+									<Link to={`/publikacja/editStatus/${publikacje.uuid}`} className="button is-small is-info">Zredaguj</Link>
+								)}
+								{user && user.role === "wydawnictwo" && (
+									<div className="Option">
+										<Link to={`/publikacja/editStatus/${publikacje.uuid}`} className="button is-small is-info">Opublikuj</Link>
+										<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
+									</div>
+								)}
 							</td>
 						</tr>
 					))}

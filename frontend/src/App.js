@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import AddPublikacje from "./pages/AddPublikacje";
 import Publiakcje from "./pages/Publiakcje";
 import EditPublikacje from "./pages/EditPublikacje";
+import EditStatus from "./pages/EditStatus";
+import Publikacja from "./pages/Publikacja";
 
 function App() {
 	return (
@@ -19,6 +21,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
+					<Route path="/publikacja/:id" element={<Publikacja />} />
 					<Route path="/o_nas" element={<ONas />} />
 					<Route path="/informacje_dla_autorow" element={<InformacjeDlaAutorow />} />
 					<Route path="/kontakt" element={<Kontakt />} />
@@ -31,6 +34,7 @@ function App() {
 					<Route path="/publikacje" element={<Publiakcje />} />
 					<Route path="/publikacje/add" element={<AddPublikacje />} />
 					<Route path="/publikacje/edit/:id" element={<EditPublikacje />} />
+					<Route path="/publikacja/editStatus/:id" element={<EditStatus />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

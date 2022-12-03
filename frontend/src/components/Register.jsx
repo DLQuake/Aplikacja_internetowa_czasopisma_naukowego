@@ -14,9 +14,7 @@ const Register = () => {
     const [role, setRole] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { user, isError, isSuccess, isLoading, message } = useSelector(
-        (state) => state.auth
-    );
+    const { user, isError, isSuccess, isLoading, message } = useSelector((state) => state.auth);
 
     useEffect(() => {
         if (user || isSuccess) {
