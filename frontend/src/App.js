@@ -14,6 +14,7 @@ import Publiakcje from "./pages/Publiakcje";
 import EditPublikacje from "./pages/EditPublikacje";
 import EditStatus from "./pages/EditStatus";
 import Publikacja from "./pages/Publikacja";
+import Uwagi from "./pages/Uwagi";
 
 function App() {
 	return (
@@ -34,6 +35,7 @@ function App() {
 					<Route path="/publikacje" element={<Publiakcje />} />
 					<Route path="/publikacje/add" element={<AddPublikacje />} />
 					<Route path="/publikacje/edit/:id" element={<EditPublikacje />} />
+					<Route path="/publikacje/uwagi/:id" element={<Uwagi />} />
 					<Route path="/publikacja/editStatus/:id" element={<EditStatus />} />
 				</Routes>
 			</BrowserRouter>
