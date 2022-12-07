@@ -59,7 +59,7 @@ W tym samym folderze znajduje sie plik PDF.
 ## Pobranie i Klonowanie
 Można pobrać repozytorium na dwa sposoby:
 
-* ```bash
-    git clone https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego.git
-    ```
+* ```
+  git clone https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego.git
+  ```
 * [Download ZIP](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/archive/refs/heads/main.zip)
