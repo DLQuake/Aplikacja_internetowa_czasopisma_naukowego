@@ -44,7 +44,7 @@ const ShowUwagi = () => {
                         <div className="columns">
                             <div className="column">
                                 <div className="title">Uwagi od Recenzenta</div>
-                                <p className="subtitle">{uwagi}</p>
+                                <textarea class="textarea" rows="22" value={uwagi} disabled></textarea>
                             </div>
                         </div>
                     </div>
