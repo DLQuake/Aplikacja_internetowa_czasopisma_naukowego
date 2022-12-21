@@ -50,7 +50,15 @@ const FormEditStatus = () => {
 
     return (
         <div>
-            <h1 className="title">Recenzuj publikacje - {title}</h1>
+            {user && user.role === "recenzent" && (
+                <h1 className="title">Recenzuj publikacje - {title}</h1>
+            )}
+            {user && user.role === "redaktor" && (
+                <h1 className="title">Zredaguj publikacje - {title}</h1>
+            )}
+            {user && user.role === "wydawnictwo" && (
+                <h1 className="title">Opublikowanie publikacji - {title}</h1>
+            )}
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
@@ -99,18 +107,28 @@ const FormEditStatus = () => {
                             )}
 
                             {user && user.role === "redaktor" && (
-                                <div className="field">
-                                    <label className="label">Status Publikacji</label>
-                                    <div className="control has-icons-left">
-                                        <div className="select is-fullwidth">
-                                            <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                                                <option>Wybierz Status</option>
-                                                <option value="Do publikacji">Do publikacji</option>
-                                            </select>
+                                <div>
+                                    <div className="field">
+                                        <label className="label">Status Publikacji</label>
+                                        <div className="control has-icons-left">
+                                            <div className="select is-fullwidth">
+                                                <select value={status} onChange={(e) => setStatus(e.target.value)}>
+                                                    <option>Wybierz Status</option>
+                                                    <option value="Do publikacji">Do publikacji</option>
+                                                    <option value="Brak zgody na opublikowanie">Brak zgody na opublikowanie</option>
+                                                </select>
+                                            </div>
+                                            <span class="icon is-small is-left">
+                                                <i class="fa-solid fa-square-check"></i>
+                                            </span>
                                         </div>
-                                        <span class="icon is-small is-left">
-                                            <i class="fa-solid fa-square-check"></i>
-                                        </span>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Uwagi dotyczące publikacji</label>
+                                        <div class="control">
+                                            <textarea class="textarea" rows="10" value={uwagi} onChange={(e) => setUwagi(e.target.value)} placeholder="Treść uwag..."></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             )}
