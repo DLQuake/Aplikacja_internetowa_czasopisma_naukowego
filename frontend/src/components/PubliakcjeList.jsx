@@ -45,11 +45,6 @@ const PubliakcjeList = () => {
 									Uwagi
 								</div>
 							)}
-							{user && user.role === "recenzent" && (
-								<div>
-									Uwagi
-								</div>
-							)}
 						</th>
 						<th>Opcje</th>
 					</tr>
@@ -67,15 +62,14 @@ const PubliakcjeList = () => {
 								{user && user.role === "autor" && (
 									<Link to={`/publikacje/uwagi/${publikacje.uuid}`} className="button is-small is-info">Zobacz uwagi</Link>
 								)}
-								{user && user.role === "recenzent" && (
-									<Link to={`/publikacje/uwagi/${publikacje.uuid}`} className="button is-small is-info">Zobacz uwagi</Link>
-								)}
 							</td>
 							<td>
 								{user && user.role === "autor" && (
 									<div className="Option">
 										<Link to={`/publikacje/edit/${publikacje.uuid}`} className="button is-small is-info">Edytuj</Link>
-										{/* <button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button> */}
+										{publikacje.status === "Brak zgody na opublikowanie"&& (
+											<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
+										)}
 									</div>
 								)}
 								{user && user.role === "recenzent" && (
