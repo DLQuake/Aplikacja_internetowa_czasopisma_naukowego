@@ -52,7 +52,7 @@ export const getPublications = async (req, res) => {
         let response;
         if (req.role === "wydawnictwo") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
                 where: {
                     status: {
                         [Op.or]: ["Do publikacji", "Opublikowany"]
@@ -65,9 +65,11 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "redaktor") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
                 where: {
-                    status: "Wysłany do redaktora",
+                    status: {
+                        [Op.or]: ["Wysłany do recenzji", "Wysłany do redaktora"]
+                    }
                 },
                 include: [{
                     model: User,
@@ -76,11 +78,9 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "recenzent") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
                 where: {
-                    status: {
-                        [Op.or]: ["Wysłany do recenzji", "Odesłany do Autora"]
-                    }
+                    status: "Wysłany do recenzji",
                 },
                 include: [{
                     model: User,
@@ -89,7 +89,7 @@ export const getPublications = async (req, res) => {
             });
         } else {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
                 where: {
                     userId: req.userId
                 },
@@ -115,7 +115,7 @@ export const getPublicationById = async (req, res) => {
         if (!publication) return res.status(404).json({ msg: "Nie znaleziono publikacji" });
         let response;
         response = await Publications.findOne({
-            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagi"],
+            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
             where: {
                 id: publication.id
             },
@@ -148,13 +148,15 @@ export const createPublication = (req, res) => {
         if (err) return res.status(500).json({ msg: err.message });
         try {
             await Publications.create({
-                status: "Wysłany do recenzji",
+                status: "Wysłany do redaktora",
                 tytul: name,
                 opis: opis,
                 plik: fileName,
                 url: url,
                 userId: req.userId,
-                uwagi: "Wypełnia recenzent"
+                uwagiOdRecenzenta: "Wypełnia Recenzent",
+                informacjeOdRedaktora: "Wypełnia Redaktor",
+                odpowiedzOdAutora: "Wypełnia Autor publikacji"
             });
             res.status(201).json({ msg: "Publikacja dodana poprawnie" });
         } catch (error) {
@@ -193,11 +195,11 @@ export const updatePublication = async (req, res) => {
     }
 
     const name = req.body.title;
-    const { status, opis, uwagi } = req.body;
+    const { status, opis, uwagiOdRecenzenta, informacjeOdRedaktora, odpowiedzOdAutora } = req.body;
     const url = `${req.protocol}://${req.get("host")}/publications/${fileName}`;
 
     try {
-        await Publications.update({status: status, tytul: name, opis: opis, plik: fileName, url: url, uwagi: uwagi}, {
+        await Publications.update({ status: status, tytul: name, opis: opis, plik: fileName, url: url, uwagiOdRecenzenta: uwagiOdRecenzenta, informacjeOdRedaktora: informacjeOdRedaktora, odpowiedzOdAutora: odpowiedzOdAutora }, {
             where: {
                 id: publication.id
             }

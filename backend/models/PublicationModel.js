@@ -55,7 +55,21 @@ const Publications = db.define('publications',{
             notEmpty: true
         }
     },
-    uwagi:{
+    uwagiOdRecenzenta:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate:{
+            notEmpty: true,
+        }
+    },
+    informacjeOdRedaktora:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate:{
+            notEmpty: true,
+        }
+    },
+    odpowiedzOdAutora:{
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
