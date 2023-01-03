@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import moment from 'moment';
 
 const PubliakcjeList = () => {
 	const [publikacje, setPublikacje] = useState([]);
@@ -35,14 +36,15 @@ const PubliakcjeList = () => {
 					<tr>
 						<th>ID</th>
 						<th>Status</th>
+						<th>Data aktualizacji</th>
 						<th>Tytuł publikacji</th>
 						<th>Opis publikacji</th>
 						<th>Plik</th>
 						<th>Stworzone przez</th>
 						<th>
-							{user && user.role === "autor" && (
+							{user && user.role !== "wydawnictwo" && (
 								<div>
-									Uwagi
+									Uwagi i Informacje
 								</div>
 							)}
 						</th>
@@ -54,22 +56,21 @@ const PubliakcjeList = () => {
 						<tr key={publikacje.uuid}>
 							<td>{index + 1}</td>
 							<td>{publikacje.status}</td>
+							<td>{moment(publikacje.updatedAt).format("DD.MM.YYYY HH:mm:ss")}</td>
 							<td>{publikacje.tytul}</td>
 							<td>{publikacje.opis}</td>
 							<td><a href={publikacje.url}>PLIK</a></td>
 							<td>{publikacje.user.login}</td>
 							<td>
-								{user && user.role === "autor" && (
-									<Link to={`/publikacje/uwagi/${publikacje.uuid}`} className="button is-small is-info">Zobacz uwagi</Link>
+								{user && user.role !== "wydawnictwo" && (
+									<Link to={`/publikacje/uwagi/${publikacje.uuid}`} className="button is-small is-info">Zobacz uwagi i informacje</Link>
 								)}
 							</td>
 							<td>
 								{user && user.role === "autor" && (
 									<div className="Option">
 										<Link to={`/publikacje/edit/${publikacje.uuid}`} className="button is-small is-info">Edytuj</Link>
-										{publikacje.status === "Brak zgody na opublikowanie"&& (
-											<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
-										)}
+										<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
 									</div>
 								)}
 								{user && user.role === "recenzent" && (
@@ -81,7 +82,9 @@ const PubliakcjeList = () => {
 								{user && user.role === "wydawnictwo" && (
 									<div className="Option">
 										<Link to={`/publikacja/editStatus/${publikacje.uuid}`} className="button is-small is-info">Opublikuj</Link>
-										<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
+										{publikacje.status === "Opublikowany"&& (
+											<button onClick={() => deletePublikacje(publikacje.uuid)} className="button is-small is-danger">Usuń</button>
+										)}
 									</div>
 								)}
 							</td>

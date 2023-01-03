@@ -76,7 +76,7 @@ const FormAddPublikacje = () => {
                             {preview ? (<object width="100%" height="800" aria-label="preview PDF" data={preview} type="application/pdf"></object>) : ("")}
 
                             <div className="field mt-5 is-large is-grouped is-grouped-centered">
-                                <button type="submit" className="button is-success p-5">Wyślij do recenzenta</button>
+                                <button type="submit" className="button is-success p-5">Wyślij publikacje którą chcesz opublikować</button>
                             </div>
                         </form>
                     </div>

@@ -8,7 +8,8 @@ const FormEditStatus = () => {
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
     const [file, setFile] = useState("");
-    const [uwagi, setUwagi] = useState("");
+    const [uwagiOdRecenzenta, setUwagiOdRecenzenta] = useState("");
+    const [informacjeOdRedaktora, setInformacjeOdRedaktora] = useState("");
     const [msg, setMsg] = useState("");
     const { id } = useParams();
     const navigate = useNavigate();
@@ -21,7 +22,8 @@ const FormEditStatus = () => {
             setTitle(response.data.tytul);
             setOpis(response.data.opis);
             setFile(response.data.plik);
-            setUwagi(response.data.uwagi);
+            setUwagiOdRecenzenta(response.data.uwagiOdRecenzenta);
+            setInformacjeOdRedaktora(response.data.informacjeOdRedaktora);
         };
         getPublicationById();
     }, [id]);
@@ -29,7 +31,8 @@ const FormEditStatus = () => {
     const updatePublication = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("uwagi", uwagi);
+        formData.append("informacjeOdRedaktora", informacjeOdRedaktora);
+        formData.append("uwagiOdRecenzenta", uwagiOdRecenzenta);
         formData.append("file", file);
         formData.append("opis", opis);
         formData.append("title", title);
@@ -88,7 +91,6 @@ const FormEditStatus = () => {
                                                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                                     <option>Wybierz Status</option>
                                                     <option value="Wysłany do redaktora">Wysłany do redaktora</option>
-                                                    <option value="Odesłany do Autora">Odesłany do Autora</option>
                                                 </select>
                                             </div>
                                             <span class="icon is-small is-left">
@@ -100,7 +102,7 @@ const FormEditStatus = () => {
                                     <div class="field">
                                         <label class="label">Uwagi dotyczące publikacji</label>
                                         <div class="control">
-                                            <textarea class="textarea" rows="10" value={uwagi} onChange={(e) => setUwagi(e.target.value)} placeholder="Treść uwag..."></textarea>
+                                            <textarea class="textarea" rows="10" value={uwagiOdRecenzenta} onChange={(e) => setUwagiOdRecenzenta(e.target.value)} placeholder="Treść uwag..."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -115,6 +117,8 @@ const FormEditStatus = () => {
                                                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                                     <option>Wybierz Status</option>
                                                     <option value="Do publikacji">Do publikacji</option>
+                                                    <option value="Wysłany do recenzji">Wysłany do recenzji</option>
+                                                    <option value="Możliwość publikacji pod warunkiem">Możliwość publikacji pod warunkiem</option>
                                                     <option value="Brak zgody na opublikowanie">Brak zgody na opublikowanie</option>
                                                 </select>
                                             </div>
@@ -125,9 +129,16 @@ const FormEditStatus = () => {
                                     </div>
 
                                     <div class="field">
-                                        <label class="label">Uwagi dotyczące publikacji</label>
+                                        <label class="label">Uwagi od Recenzenta dotyczące publikacji</label>
                                         <div class="control">
-                                            <textarea class="textarea" rows="10" value={uwagi} onChange={(e) => setUwagi(e.target.value)} placeholder="Treść uwag..."></textarea>
+                                            <textarea class="textarea" rows="10" value={uwagiOdRecenzenta} disabled></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Informacje od Redaktora</label>
+                                        <div class="control">
+                                            <textarea class="textarea" rows="10" value={informacjeOdRedaktora} onChange={(e) => setInformacjeOdRedaktora(e.target.value)} placeholder="Treść uwag..."></textarea>
                                         </div>
                                     </div>
                                 </div>

@@ -6,7 +6,9 @@ const ShowUwagi = () => {
     const [status, setStatus] = useState("");
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
-    const [uwagi, setUwagi] = useState("");
+    const [uwagiOdRecenzenta, setUwagiOdRecenzenta] = useState("");
+    const [informacjeOdRedaktora, setInformacjeOdRedaktora] = useState("");
+    const [odpowiedzOdAutora, setOdpowiedzOdAutora] = useState("");
     const { id } = useParams();
 
     useEffect(() => {
@@ -15,7 +17,9 @@ const ShowUwagi = () => {
             setStatus(response.data.status);
             setTitle(response.data.tytul);
             setOpis(response.data.opis);
-            setUwagi(response.data.uwagi);
+            setUwagiOdRecenzenta(response.data.uwagiOdRecenzenta);
+            setInformacjeOdRedaktora(response.data.informacjeOdRedaktora);
+            setOdpowiedzOdAutora(response.data.odpowiedzOdAutora);
         };
         getPublicationById();
     }, [id]);
@@ -43,8 +47,19 @@ const ShowUwagi = () => {
 
                         <div className="columns">
                             <div className="column">
+                                <div className="title">Informacje od Redaktora</div>
+                                <textarea class="textarea" rows="10" value={informacjeOdRedaktora} disabled></textarea>
+                            </div>
+                            <div className="column">
                                 <div className="title">Uwagi od Recenzenta</div>
-                                <textarea class="textarea" rows="22" value={uwagi} disabled></textarea>
+                                <textarea class="textarea" rows="10" value={uwagiOdRecenzenta} disabled></textarea>
+                            </div>
+                        </div>
+
+                        <div className="columns">
+                            <div className="column">
+                                <div className="title">Odpowiedź od Autora</div>
+                                <textarea class="textarea" rows="10" value={odpowiedzOdAutora} disabled></textarea>
                             </div>
                         </div>
                     </div>

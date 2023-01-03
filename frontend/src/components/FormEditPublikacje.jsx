@@ -7,7 +7,9 @@ const FormEditPublikacje = () => {
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
     const [file, setFile] = useState("");
-    const [uwagi, setUwagi] = useState("");
+    const [uwagiOdRecenzenta, setUwagiOdRecenzenta] = useState("");
+    const [informacjeOdRedaktora, setInformacjeOdRedaktora] = useState("");
+    const [odpowiedzOdAutora, setOdpowiedzOdAutora] = useState("");
     const [preview, setPreview] = useState("");
     const [msg, setMsg] = useState("");
     const { id } = useParams();
@@ -20,7 +22,9 @@ const FormEditPublikacje = () => {
             setTitle(response.data.tytul);
             setOpis(response.data.opis);
             setFile(response.data.plik);
-            setUwagi(response.data.uwagi);
+            setUwagiOdRecenzenta(response.data.uwagiOdRecenzenta);
+            setInformacjeOdRedaktora(response.data.informacjeOdRedaktora);
+            setOdpowiedzOdAutora(response.data.odpowiedzOdAutora);
         };
         getPublicationById();
     }, [id]);
@@ -35,7 +39,7 @@ const FormEditPublikacje = () => {
     const updatePublication = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("uwagi", uwagi);
+        formData.append("odpowiedzOdAutora", odpowiedzOdAutora);
         formData.append("file", file);
         formData.append("opis", opis);
         formData.append("title", title);
@@ -60,6 +64,16 @@ const FormEditPublikacje = () => {
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
+                        <div className="columns">
+                            <div className="column">
+                                <div className="title">Informacje od Redaktora</div>
+                                <textarea class="textarea" rows="7" value={informacjeOdRedaktora} disabled></textarea>
+                            </div>
+                            <div className="column">
+                                <div className="title">Uwagi od Recenzenta</div>
+                                <textarea class="textarea" rows="7" value={uwagiOdRecenzenta} disabled></textarea>
+                            </div>
+                        </div>
                         <form onSubmit={updatePublication}>
                             <p className="has-text-centered">{msg}</p>
                             <div className="field">
@@ -83,8 +97,7 @@ const FormEditPublikacje = () => {
                                     <div className="select is-fullwidth">
                                         <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                             <option>Wybierz Status</option>
-                                            <option value="Wysłany do recenzji">Wysłany do recenzji</option>
-                                            <option value="Odesłany do Autora">Odesłany do Autora</option>
+                                            <option value="Wysłany do redaktora">Wysłany do redaktora</option>
                                         </select>
                                     </div>
                                     <span class="icon is-small is-left">
@@ -94,9 +107,9 @@ const FormEditPublikacje = () => {
                             </div>
 
                             <div class="field">
-                                <label class="label">Uwagi dotyczące publikacji</label>
+                                <label class="label">Odpowiedź od Autora na uwagi w publikacji</label>
                                 <div class="control">
-                                    <textarea class="textarea" rows="10" value={uwagi} onChange={(e) => setUwagi(e.target.value)} placeholder="Treść uwag..."></textarea>
+                                    <textarea class="textarea" rows="10" value={odpowiedzOdAutora} onChange={(e) => setOdpowiedzOdAutora(e.target.value)} placeholder="Treść uwag..."></textarea>
                                 </div>
                             </div>
                             <div class="file is-medium is-centered">
@@ -121,7 +134,7 @@ const FormEditPublikacje = () => {
 
 
                             <div className="field mt-5 is-grouped is-grouped-centered">
-                                <button type="submit" className="button is-success p-5">Wyślij do recenzenta</button>
+                                <button type="submit" className="button is-success p-5">Zaktualizuj publikacje którą chcesz opublikować</button>
                             </div>
                         </form>
                     </div>
