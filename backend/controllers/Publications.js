@@ -52,7 +52,7 @@ export const getPublications = async (req, res) => {
         let response;
         if (req.role === "wydawnictwo") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora", "updatedAt"],
                 where: {
                     status: {
                         [Op.or]: ["Do publikacji", "Opublikowany"]
@@ -65,7 +65,7 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "redaktor") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora", "updatedAt"],
                 where: {
                     status: {
                         [Op.or]: ["Wysłany do recenzji", "Wysłany do redaktora"]
@@ -78,7 +78,7 @@ export const getPublications = async (req, res) => {
             });
         } else if (req.role === "recenzent") {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora", "updatedAt"],
                 where: {
                     status: "Wysłany do recenzji",
                 },
@@ -89,7 +89,7 @@ export const getPublications = async (req, res) => {
             });
         } else {
             response = await Publications.findAll({
-                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
+                attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora", "updatedAt"],
                 where: {
                     userId: req.userId
                 },
@@ -115,7 +115,7 @@ export const getPublicationById = async (req, res) => {
         if (!publication) return res.status(404).json({ msg: "Nie znaleziono publikacji" });
         let response;
         response = await Publications.findOne({
-            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora"],
+            attributes: ['uuid', 'status', 'tytul', 'opis', 'plik', 'url', "uwagiOdRecenzenta", "informacjeOdRedaktora", "odpowiedzOdAutora", "updatedAt"],
             where: {
                 id: publication.id
             },
