@@ -9,6 +9,7 @@ const Publikacja = () => {
     const [title, setTitle] = useState("");
     const [opis, setOpis] = useState("");
     const [url, setUrl] = useState("");
+    const [user, setUser] = useState("");
     const { id } = useParams();
 
     useEffect(() => {
@@ -17,6 +18,7 @@ const Publikacja = () => {
             setTitle(response.data.tytul);
             setOpis(response.data.opis);
             setUrl(response.data.url);
+            setUser(response.data.user);
         };
         ShowPublicationsOnHomePageById();
     }, [id]);
@@ -28,7 +30,8 @@ const Publikacja = () => {
                 <div className="columns">
                     <div className="column has-text-dark">
                         <p className="notification has-background-white has-text-centered">
-                            <div className="title">{title}</div>
+                            <div className="title">Publiakcja: {title}</div>
+                            <div className="subtitle">Autor publikacji: {user.imie} {user.nazwisko}</div>
                             <div className="subtitle has-text-justified">{opis}</div>
                             <iframe src={url} width="100%" height="1190px" title="Publication" frameborder="0"></iframe>
                         </p>
