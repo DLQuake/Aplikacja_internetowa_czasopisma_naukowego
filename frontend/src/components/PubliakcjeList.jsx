@@ -27,9 +27,7 @@ const PubliakcjeList = () => {
 			<h1 className="title">Publikacje</h1>
 			<h2 className="subtitle">Lista publikacji</h2>
 			{user && user.role === "autor" && (
-				<Link to="/publikacje/add" className="button is-primary mb-2">
-					Dodaj nową publikacje
-				</Link>
+				<Link to="/publikacje/add" className="button is-primary mb-2">Dodaj nową publikacje</Link>
 			)}
 			<table className="table is-striped is-fullwidth">
 				<thead>
