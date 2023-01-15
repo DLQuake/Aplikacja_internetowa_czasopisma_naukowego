@@ -1,5 +1,6 @@
 import React from "react";
 import NavbarHome from "../components/NavbarHome";
+import { Link } from "react-router-dom";
 
 const ONas = () => {
     return (
@@ -8,26 +9,32 @@ const ONas = () => {
             <section className="section has-background-success">
                 <div class="content has-background-white p-6">
                     <h1>Serdecznie witamy na Portalu Czasopisma Naukowego!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis repudiandae harum eum, quis id voluptas ratione consequuntur iste? Soluta totam dolorum ratione in, sunt rerum odio maiores odit id.</p>
+                    <p>Witamy w naszym czasopiśmie naukowym, wiodącej publikacji z dziedziny <strong>Informatyki oraz matematyki</strong>. Nasze czasopismo służy społeczności naukowej od <strong>20</strong> lat, stanowiąc platformę do publikacji przełomowych badań i innowacyjnych pomysłów.</p>
                     <h2>Cel i misja</h2>
-                    <p>Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p>
+                    <p>Naszą misją jest promowanie postępu wiedzy w naszej dziedzinie poprzez publikowanie wysokiej jakości recenzowanych artykułów. Staramy się publikować artykuły interesujące szerokie grono badaczy, praktyków i studentów. Nasze czasopismo obejmuje szeroki zakres tematów w ramach <strong>Informatyki oraz matematyki</strong>, w tym:</p>
                     <ul>
-                        <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-                        <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-                        <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
-                        <li>Ut non enim metus.</li>
-                        <li>Ut non enim metus.</li>
-                        <li>Ut non enim metus.</li>
-                        <li>Ut non enim metus.</li>
+                        <li>Sieci komputerowe</li>
+                        <li>Systemy operacyjne</li>
+                        <li>Programowanie i algorytmy</li>
+                        <li>Grafika komputerowa i wizualizacja</li>
+                        <li>Bezpieczeństwo informatyczne</li>
+                        <li>Sztuczna inteligencja i uczenie maszynowe</li>
+                        <li>Analiza matematyczna</li>
+                        <li>Algebra i teoria liczb</li>
+                        <li>Geometria</li>
+                        <li>Równanie różniczkowe i całkowanie</li>
+                        <li>Statystyka i probabilistyka</li>
+                        <li>Równanie różniczkowe i całkowanie</li>
+                        <li>Teoria grafów</li>
                     </ul>
 
-                    <h2>lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, et veritatis? Beatae quod, aliquam ullam sunt, magni voluptatum eos facilis, sapiente dignissimos excepturi fugit placeat dolor consectetur suscipit animi dolore.</p>
+                    <h2>Zespół redakcyjny</h2>
+                    <p>Nasz zespół redakcyjny składa się z ekspertów w swoich dziedzinach, którzy niestrudzenie pracują, aby każdy publikowany przez nas artykuł spełniał najwyższe standardy jakości i dokładności. Ściśle współpracujemy również z międzynarodowym zespołem wysoko wykwalifikowanych recenzentów, aby zapewnić uczciwą i obiektywną ocenę każdego zgłoszenia.</p>
+
+                    <h2>Zapraszamy</h2>
+                    <p>Czekamy na zgłoszenia od autorów z całego świata i zachęcamy do składania swoich publikacji. Nasze wytyczne dotyczące przesyłania publikacji można znaleźć na naszej stronie internetowej w zakładce <Link to="/informacje_dla_autorow">"Informacje dla autorów"</Link>, a nasza redakcja zawsze chętnie odpowie na wszelkie pytania lub udzieli pomocy w procesie przesyłania.</p>
+                    <p>Jeżeli sa jakieś pytania należy przejść na stronę <Link to="/kontakt">"Kontakt"</Link> i napisać wiadomość za pomocą formularza kontaktowego</p>
+                    <p>Dziękujemy za wzięcie pod uwagę naszego czasopisma dla publikacji. Czekamy!</p>
                 </div>
             </section>
         </React.Fragment>
