@@ -20,13 +20,13 @@ const Publikacja = () => {
         <React.Fragment>
             <NavbarHome />
             <section className="section has-background-success">
-                <div className="columns">
+                <div className="columns is-multiline">
                     {publikacje.map((publikacje) => (
                         <Link to={`/publikacja/${publikacje.uuid}`} className="column has-text-dark is-one-quarter">
-                            <p className="notification has-background-white has-text-justified">
+                            <p className="notification has-background-white has-text-centered">
                                 <div className="title">{publikacje.tytul}</div>
                                 <div className="subtitle">Autor publikacji: {publikacje.user.imie} {publikacje.user.nazwisko}</div>
-                                <div className="text">{publikacje.opis}</div>
+                                <div className="text has-text-justified">{publikacje.opis}</div>
                             </p>
                         </Link>
                     ))}
