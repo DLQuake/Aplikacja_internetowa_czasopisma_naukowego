@@ -29,6 +29,7 @@ const FormEditStatus = () => {
     }, [id]);
 
     const updatePublication = async (e) => {
+        alert("Status publikacji został zaktualizowany")
         e.preventDefault();
         const formData = new FormData();
         formData.append("informacjeOdRedaktora", informacjeOdRedaktora);

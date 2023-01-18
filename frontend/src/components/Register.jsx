@@ -24,7 +24,7 @@ const Register = () => {
     }, [user, isSuccess, dispatch, navigate]);
 
     const Auth = (e) => {
-        alert("Pomyslnie zarejestrowano użytkownika");
+        alert("Pomyślnie zarejestrowano użytkownika");
         e.preventDefault();
         dispatch(RegisterUser({ imie, nazwisko, email, login, password, confPassword, role }));
     };

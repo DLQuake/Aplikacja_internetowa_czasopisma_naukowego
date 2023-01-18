@@ -17,6 +17,7 @@ const FormAddPublikacje = () => {
     };
 
     const CreatePublication = async (e) => {
+        alert("Publikacja została wysłana do Redaktora")
         e.preventDefault();
         const formData = new FormData();
         formData.append("file", file);

@@ -36,7 +36,7 @@ const Navbar = () => {
 						</div>
 						<div className="navbar-item">
 							<div className="buttons">
-								<button onClick={logout} className="button is-light"> Log out </button>
+								<button onClick={logout} className="button is-light"> Wyloguj się </button>
 							</div>
 						</div>
 					</div>

@@ -37,6 +37,7 @@ const FormEditPublikacje = () => {
     };
 
     const updatePublication = async (e) => {
+        alert("Aktualizacja przeszła pomyślnie i publikacja została odesłana do redaktora")
         e.preventDefault();
         const formData = new FormData();
         formData.append("odpowiedzOdAutora", odpowiedzOdAutora);
