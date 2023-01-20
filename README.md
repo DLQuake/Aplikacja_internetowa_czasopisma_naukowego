@@ -4,14 +4,14 @@ Temat pracy inżynierskiej polegający na stworzeniu aplikacji internetowej czas
 ## Spis treści
  * [Krótki opis repozytorium](#krótki-opis-repozytorium)
  * [Dokumentacja](#dokumentacja)
- * [Technologie jakie zastaną użyte do pracy](#technologie-jake-zostaną-użyte-do-pracy)
+ * [Technologie jakie zastały użyte do pracy](#technologie-jakie-zostały-użyte-do-pracy)
  * [Koncepcja aplikacji](#koncepcja-aplikacji)
  * [Pobranie i klonowanie](#pobranie-i-klonowanie)
 
 ## Krótki opis repozytorium
 W tym repozytorium powstała aplikacja internetowa czasopisma naukowego, która umożliwia wysyłanie publikacji przez autora, a następnie przechodzi przez proces recenzowania oraz redagowania oraz publikacji na stronie głównej.
 
-Praca inżynierska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka prof. UWM](http://wmii.uwm.edu.pl/~denisjuk/)
+Praca inżynierska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka](http://wmii.uwm.edu.pl/~denisjuk/)
 
 ## Technologie jakie zostały użyte do pracy
 
@@ -22,11 +22,11 @@ Praca inżynierska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka pro
 
 ## Koncepcja aplikacji
 Do wykonania był projekt aplikacji internetowej czasopisma naukowego.
-Założenie aplikacji było takie, aby wyeliminowanie potrzeby wizyt w wydawnictwie, ulepszenie
+Założenie aplikacji było takie, aby wyeliminować potrzeby wizyt w wydawnictwie, ulepszenie
 procesu publikacji i jego maksymalne przyspieszenie. Obecnie wiedza w każdej
 dziedzinie rozwija się bardzo szybko. Opóźnienia w publikacjach nie są więc
 pożądane.
-W tym celu powstaje właśnie ta aplikacja by rozwiązać przedstawiony problem
+W tym celu powstała właśnie ta aplikacja by rozwiązać przedstawiony problem
 
 * Aktorzy
     * Autor
