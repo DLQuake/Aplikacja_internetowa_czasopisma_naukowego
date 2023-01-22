@@ -117,7 +117,7 @@ const FormEditStatus = () => {
                                             <div className="select is-fullwidth">
                                                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                                     <option>Wybierz Status</option>
-                                                    <option value="Do artykułu">Do artykułu</option>
+                                                    <option value="Do publikacji">Do publikacji</option>
                                                     <option value="Wysłany do recenzji">Wysłany do recenzji</option>
                                                     <option value="Możliwość artykułu pod warunkiem">Możliwość artykułu pod warunkiem</option>
                                                     <option value="Brak zgody na opublikowanie">Brak zgody na opublikowanie</option>
