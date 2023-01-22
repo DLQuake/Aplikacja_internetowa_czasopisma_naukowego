@@ -25,7 +25,7 @@ const Publikacja = () => {
                         <Link to={`/publikacja/${publikacje.uuid}`} className="column has-text-dark is-one-quarter">
                             <p className="notification has-background-white has-text-centered">
                                 <div className="title">{publikacje.tytul}</div>
-                                <div className="subtitle">Autor publikacji: {publikacje.user.imie} {publikacje.user.nazwisko}</div>
+                                <div className="subtitle">Autor artykułu: {publikacje.user.imie} {publikacje.user.nazwisko}</div>
                                 <div className="text has-text-justified">{publikacje.opis}</div>
                             </p>
                         </Link>

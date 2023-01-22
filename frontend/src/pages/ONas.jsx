@@ -9,7 +9,7 @@ const ONas = () => {
             <section className="section has-background-success">
                 <div class="content has-background-white p-6">
                     <h1>Serdecznie witamy na Portalu Czasopisma Naukowego!</h1>
-                    <p>Witamy w naszym czasopiśmie naukowym, wiodącej publikacji z dziedziny <strong>Informatyki oraz matematyki</strong>. Nasze czasopismo służy społeczności naukowej od <strong>20</strong> lat, stanowiąc platformę do publikacji przełomowych badań i innowacyjnych pomysłów.</p>
+                    <p>Witamy w naszym czasopiśmie naukowym z dziedziny <strong>Informatyki oraz matematyki</strong>. Nasze czasopismo służy społeczności naukowej od <strong>20</strong> lat, stanowiąc platformę do publikacji przełomowych badań i innowacyjnych pomysłów.</p>
                     <h2>Cel i misja</h2>
                     <p>Naszą misją jest promowanie postępu wiedzy w naszej dziedzinie poprzez publikowanie wysokiej jakości recenzowanych artykułów. Staramy się publikować artykuły interesujące szerokie grono badaczy, praktyków i studentów. Nasze czasopismo obejmuje szeroki zakres tematów w ramach <strong>Informatyki oraz matematyki</strong>, w tym:</p>
                     <ul>
@@ -29,12 +29,12 @@ const ONas = () => {
                     </ul>
 
                     <h2>Zespół redakcyjny</h2>
-                    <p>Nasz zespół redakcyjny składa się z ekspertów w swoich dziedzinach, którzy niestrudzenie pracują, aby każdy publikowany przez nas artykuł spełniał najwyższe standardy jakości i dokładności. Ściśle współpracujemy również z międzynarodowym zespołem wysoko wykwalifikowanych recenzentów, aby zapewnić uczciwą i obiektywną ocenę każdego zgłoszenia.</p>
+                    <p>Nasz zespół redakcyjny składa się z ekspertów w swoich dziedzinach, którzy niestrudzenie pracują, aby każdy publikowany przez nas artykuł spełniał najwyższe standardy jakości i dokładności. Ściśle współpracujemy również <br />z międzynarodowym zespołem wysoko wykwalifikowanych recenzentów, aby zapewnić uczciwą i obiektywną ocenę każdego zgłoszenia.</p>
 
                     <h2>Zapraszamy</h2>
-                    <p>Czekamy na zgłoszenia od autorów z całego świata i zachęcamy do składania swoich publikacji. Nasze wytyczne dotyczące przesyłania publikacji można znaleźć na naszej stronie internetowej w zakładce <Link to="/informacje_dla_autorow">"Informacje dla autorów"</Link>, a nasza redakcja zawsze chętnie odpowie na wszelkie pytania lub udzieli pomocy w procesie przesyłania.</p>
+                    <p>Czekamy na zgłoszenia od autorów z całego świata i zachęcamy do składania swoich prac. Nasze wytyczne dotyczące przesyłania prac można znaleźć na naszej stronie internetowej w zakładce <Link to="/informacje_dla_autorow">"Informacje dla autorów"</Link>, a nasza redakcja zawsze chętnie odpowie na wszelkie pytania lub udzieli pomocy w procesie przesyłania.</p>
                     <p>Jeżeli sa jakieś pytania należy przejść na stronę <Link to="/kontakt">"Kontakt"</Link> i napisać wiadomość za pomocą formularza kontaktowego</p>
-                    <p>Dziękujemy za wzięcie pod uwagę naszego czasopisma dla publikacji. Czekamy!</p>
+                    <h1>Czekamy!</h1>
                 </div>
             </section>
         </React.Fragment>

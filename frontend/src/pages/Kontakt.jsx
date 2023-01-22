@@ -28,7 +28,7 @@ const Kontakt = () => {
                             <div className="column is-10">
                                 <div className="box">
                                     <h1 className="title has-text-centered">KONTAKT</h1>
-                                    <h2 className="subtitle has-text-centered">Jeśli są jakieś pytania dotyczące publikacji, proszę napisać wiadomość poprzez poniższy formularz</h2>
+                                    <h2 className="subtitle has-text-centered">Jeśli są jakieś pytania dotyczące artykułu, proszę napisać wiadomość poprzez poniższy formularz</h2>
                                     <div className="field">
                                         <label className="label">Imię i nazwisko</label>
                                         <div className="control has-icons-left">

@@ -24,10 +24,10 @@ const PubliakcjeList = () => {
 
 	return (
 		<div>
-			<h1 className="title">Publikacje</h1>
-			<h2 className="subtitle">Lista publikacji</h2>
+			<h1 className="title">Artykuły</h1>
+			<h2 className="subtitle">Lista artykułów</h2>
 			{user && user.role === "autor" && (
-				<Link to="/publikacje/add" className="button is-primary mb-2">Dodaj nową publikacje</Link>
+				<Link to="/publikacje/add" className="button is-primary mb-2">Dodaj nowy artykuł</Link>
 			)}
 			<table className="table is-striped is-fullwidth">
 				<thead>
@@ -35,8 +35,8 @@ const PubliakcjeList = () => {
 						<th>ID</th>
 						<th>Status</th>
 						<th>Data aktualizacji</th>
-						<th>Tytuł publikacji</th>
-						<th>Opis publikacji</th>
+						<th>Tytuł artykułu</th>
+						<th>Opis artykułu</th>
 						<th>Plik</th>
 						<th>Stworzone przez</th>
 						<th>

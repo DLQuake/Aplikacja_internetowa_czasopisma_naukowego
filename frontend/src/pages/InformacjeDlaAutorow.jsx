@@ -8,7 +8,7 @@ const InformacjeDlaAutorow = ({ children }) => {
             <section className="section has-background-success">
                 <div class="content has-background-white p-6">
                     <h1>Informacje dla autorów</h1>
-                    <p>Poniżej znajdują się informacje dla autorów których należy przestrzegać</p>
+                    <p>Poniżej znajdują się informacje dla autorów.</p>
                     <h2>Wymagania</h2>
                     <p>Proszę przestrzegać tych ogólnych wymagań:</p>
                     <ul>
@@ -23,7 +23,7 @@ const InformacjeDlaAutorow = ({ children }) => {
                         <li>Numeracja stron: Praca powinna być ponumerowana.</li>
                         <li>Tabele i rysunki: Tabele i rysunki powinny być czytelne i muszą być oznaczone odpowiednimi numerami.</li>
                         <li>Literatura: Praca powinna zawierać odpowiednią bibliografię i powinna być przedstawiona w postaci listy nie numerowanej</li>
-                        <li>Język: Praca powinna być napisana w języku polskim i przejrzana pod kątem błędów ortograficznych, interpunkcyjnych</li>
+                        <li>Język: Praca powinna być napisana w języku polskim i przejrzana pod kątem błędów ortograficznych i interpunkcyjnych</li>
                     </ul>
                     <h2>Plagiat</h2>
                     <p>Przestrzegamy ścisłej procedury antyplagiatowej i nie przyjmujemy prac przygotowanych przez ghostwriterów (osobę zatrudnioną do przygotowania pracy) ani autorów gościnnych (współautorzy wymienieni wyłącznie z powodów honorowych). Takie działania są postrzegane jako wykroczenia i mogą być ścigane karnie.</p>

@@ -29,7 +29,7 @@ const FormEditStatus = () => {
     }, [id]);
 
     const updatePublication = async (e) => {
-        alert("Status publikacji został zaktualizowany")
+        alert("Status artykułu został zaktualizowany")
         e.preventDefault();
         const formData = new FormData();
         formData.append("informacjeOdRedaktora", informacjeOdRedaktora);
@@ -55,13 +55,13 @@ const FormEditStatus = () => {
     return (
         <div>
             {user && user.role === "recenzent" && (
-                <h1 className="title">Recenzuj publikacje - {title}</h1>
+                <h1 className="title">Recenzuj artykuł - {title}</h1>
             )}
             {user && user.role === "redaktor" && (
-                <h1 className="title">Zredaguj publikacje - {title}</h1>
+                <h1 className="title">Zredaguj artykuł - {title}</h1>
             )}
             {user && user.role === "wydawnictwo" && (
-                <h1 className="title">Opublikowanie publikacji - {title}</h1>
+                <h1 className="title">Opublikuj artykuł - {title}</h1>
             )}
             <div className="card is-shadowless">
                 <div className="card-content">
@@ -70,11 +70,11 @@ const FormEditStatus = () => {
                             <p className="has-text-centered">{msg}</p>
                             <div className="columns">
                                 <div className="column">
-                                    <strong>Tytuł publikacji:</strong>
+                                    <strong>Tytuł artykułu:</strong>
                                     <p>{title}</p>
                                 </div>
                                 <div className="column">
-                                    <strong>Opis publikacji:</strong>
+                                    <strong>Opis artykułu:</strong>
                                     <p>{opis}</p>
                                 </div>
                                 <div className="column">
@@ -86,7 +86,7 @@ const FormEditStatus = () => {
                             {user && user.role === "recenzent" && (
                                 <div>
                                     <div className="field">
-                                        <label className="label">Status Publikacji</label>
+                                        <label className="label">Status artykułu</label>
                                         <div className="control has-icons-left">
                                             <div className="select is-fullwidth">
                                                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -101,7 +101,7 @@ const FormEditStatus = () => {
                                     </div>
 
                                     <div class="field">
-                                        <label class="label">Uwagi dotyczące publikacji</label>
+                                        <label class="label">Uwagi dotyczące artykułu</label>
                                         <div class="control">
                                             <textarea class="textarea" rows="10" value={uwagiOdRecenzenta} onChange={(e) => setUwagiOdRecenzenta(e.target.value)} placeholder="Treść uwag..."></textarea>
                                         </div>
@@ -112,14 +112,14 @@ const FormEditStatus = () => {
                             {user && user.role === "redaktor" && (
                                 <div>
                                     <div className="field">
-                                        <label className="label">Status Publikacji</label>
+                                        <label className="label">Status artykułu</label>
                                         <div className="control has-icons-left">
                                             <div className="select is-fullwidth">
                                                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                                     <option>Wybierz Status</option>
-                                                    <option value="Do publikacji">Do publikacji</option>
+                                                    <option value="Do artykułu">Do artykułu</option>
                                                     <option value="Wysłany do recenzji">Wysłany do recenzji</option>
-                                                    <option value="Możliwość publikacji pod warunkiem">Możliwość publikacji pod warunkiem</option>
+                                                    <option value="Możliwość artykułu pod warunkiem">Możliwość artykułu pod warunkiem</option>
                                                     <option value="Brak zgody na opublikowanie">Brak zgody na opublikowanie</option>
                                                 </select>
                                             </div>
@@ -130,7 +130,7 @@ const FormEditStatus = () => {
                                     </div>
 
                                     <div class="field">
-                                        <label class="label">Uwagi od Recenzenta dotyczące publikacji</label>
+                                        <label class="label">Uwagi od Recenzenta dotyczące artykułu</label>
                                         <div class="control">
                                             <textarea class="textarea" rows="10" value={uwagiOdRecenzenta} disabled></textarea>
                                         </div>
@@ -147,12 +147,12 @@ const FormEditStatus = () => {
 
                             {user && user.role === "wydawnictwo" && (
                                 <div className="field">
-                                    <label className="label">Status Publikacji</label>
+                                    <label className="label">Status artykułu</label>
                                     <div className="control has-icons-left">
                                         <div className="select is-fullwidth">
                                             <select value={status} onChange={(e) => setStatus(e.target.value)}>
                                                 <option>Wybierz Status</option>
-                                                <option value="Opublikowany">Opublikuj</option>
+                                                <option value="Opublikowany">Opublikowany</option>
                                             </select>
                                         </div>
                                         <span class="icon is-small is-left">

@@ -61,7 +61,7 @@ const FormEditPublikacje = () => {
 
     return (
         <div>
-            <h1 className="title">Edytuj publikacje</h1>
+            <h1 className="title">Edytuj artykuł</h1>
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
@@ -78,22 +78,22 @@ const FormEditPublikacje = () => {
                         <form onSubmit={updatePublication}>
                             <p className="has-text-centered">{msg}</p>
                             <div className="field">
-                                <label className="label">Tytuł publikacji</label>
+                                <label className="label">Tytuł artykułu</label>
                                 <div className="control has-icons-left">
-                                    <input type="text" className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Tytuł publikacji" />
+                                    <input type="text" className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Tytuł artykułu" />
                                     <span className="icon is-small is-left">
                                         <i className="fa-solid fa-file-lines"></i>
                                     </span>
                                 </div>
                             </div>
                             <div className="field">
-                                <label className="label">Krótki opis publikacji</label>
+                                <label className="label">Krótki opis artykułu</label>
                                 <div className="control">
                                     <textarea className="textarea" rows="10" value={opis} onChange={(e) => setOpis(e.target.value)} placeholder="Treść opisu..."></textarea>
                                 </div>
                             </div>
                             <div className="field">
-                                <label className="label">Status Publikacji</label>
+                                <label className="label">Status artykułu</label>
                                 <div className="control has-icons-left">
                                     <div className="select is-fullwidth">
                                         <select value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -108,7 +108,7 @@ const FormEditPublikacje = () => {
                             </div>
 
                             <div class="field">
-                                <label class="label">Odpowiedź od Autora na uwagi w publikacji</label>
+                                <label class="label">Odpowiedź od Autora na uwagi do artykułu</label>
                                 <div class="control">
                                     <textarea class="textarea" rows="10" value={odpowiedzOdAutora} onChange={(e) => setOdpowiedzOdAutora(e.target.value)} placeholder="Treść uwag..."></textarea>
                                 </div>
@@ -121,7 +121,7 @@ const FormEditPublikacje = () => {
                                             <i class="fas fa-upload"></i>
                                         </span>
                                         <span class="file-label">
-                                            Dodaj publikacje (np.: publikacja.pdf)
+                                            Dodaj artykuł (np.: artykuł.pdf)
                                         </span>
                                     </span>
                                 </label>
@@ -135,7 +135,7 @@ const FormEditPublikacje = () => {
 
 
                             <div className="field mt-5 is-grouped is-grouped-centered">
-                                <button type="submit" className="button is-success p-5">Zaktualizuj publikacje którą chcesz opublikować</button>
+                                <button type="submit" className="button is-success p-5">Zaktualizuj artykuł którą chcesz opublikować</button>
                             </div>
                         </form>
                     </div>

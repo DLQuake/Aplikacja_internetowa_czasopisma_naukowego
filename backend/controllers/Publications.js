@@ -156,7 +156,7 @@ export const createPublication = (req, res) => {
                 userId: req.userId,
                 uwagiOdRecenzenta: "Wypełnia Recenzent",
                 informacjeOdRedaktora: "Wypełnia Redaktor",
-                odpowiedzOdAutora: "Wypełnia Autor publikacji"
+                odpowiedzOdAutora: "Wypełnia Autor"
             });
             res.status(201).json({ msg: "Publikacja dodana poprawnie" });
         } catch (error) {

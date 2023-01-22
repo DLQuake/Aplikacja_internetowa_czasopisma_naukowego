@@ -26,17 +26,17 @@ const ShowUwagi = () => {
 
     return (
         <div>
-            <h1 className="title">Publikacja - {title}</h1>
+            <h1 className="title">Artykuł - {title}</h1>
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
                         <div className="columns">
                             <div className="column">
-                                <strong>Tytuł publikacji:</strong>
+                                <strong>Tytuł artykułu:</strong>
                                 <p>{title}</p>
                             </div>
                             <div className="column">
-                                <strong>Opis publikacji:</strong>
+                                <strong>Opis artykułu:</strong>
                                 <p>{opis}</p>
                             </div>
                             <div className="column">

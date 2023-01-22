@@ -30,8 +30,8 @@ const Publikacja = () => {
                 <div className="columns">
                     <div className="column has-text-dark">
                         <p className="notification has-background-white has-text-centered">
-                            <div className="title">Publikacja: {title}</div>
-                            <div className="subtitle">Autor publikacji: {user.imie} {user.nazwisko}</div>
+                            <div className="title">Artykuł: {title}</div>
+                            <div className="subtitle">Autor artykułu: {user.imie} {user.nazwisko}</div>
                             <div className="subtitle has-text-justified">{opis}</div>
                             <iframe src={url} width="100%" height="1190px" title="Publication" frameborder="0"></iframe>
                         </p>

@@ -39,23 +39,23 @@ const FormAddPublikacje = () => {
 
     return (
         <div>
-            <h1 className="title">Dodaj nową publikacje</h1>
+            <h1 className="title">Dodaj nowy artykuł</h1>
             <div className="card is-shadowless">
                 <div className="card-content">
                     <div className="content">
                         <form onSubmit={CreatePublication}>
                             <p className="has-text-centered">{msg}</p>
                             <div className="field">
-                                <label className="label">Tytuł publikacji</label>
+                                <label className="label">Tytuł artykułu</label>
                                 <div className="control has-icons-left">
-                                    <input type="text" className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Tytuł publikacji" />
+                                    <input type="text" className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Tytuł artykułu" />
                                     <span className="icon is-small is-left">
                                         <i className="fa-solid fa-file-lines"></i>
                                     </span>
                                 </div>
                             </div>
                             <div className="field">
-                                <label className="label">Krótki opis publikacji</label>
+                                <label className="label">Krótki opis artykułu</label>
                                 <div className="control">
                                     <textarea className="textarea" rows="10" value={opis} onChange={(e) => setOpis(e.target.value)} placeholder="Treść opisu..."></textarea>
                                 </div>
@@ -68,7 +68,7 @@ const FormAddPublikacje = () => {
                                                 <i class="fas fa-upload"></i>
                                             </span>
                                             <span class="file-label">
-                                                Dodaj publikacje (np.: publikacja.pdf)
+                                                Dodaj artykuł (np.: artykuł.pdf)
                                             </span>
                                         </span>
                                 </label>
@@ -77,7 +77,7 @@ const FormAddPublikacje = () => {
                             {preview ? (<object width="100%" height="800" aria-label="preview PDF" data={preview} type="application/pdf"></object>) : ("")}
 
                             <div className="field mt-5 is-large is-grouped is-grouped-centered">
-                                <button type="submit" className="button is-success p-5">Wyślij publikacje którą chcesz opublikować</button>
+                                <button type="submit" className="button is-success p-5">Wyślij artykuł którą chcesz opublikować</button>
                             </div>
                         </form>
                     </div>

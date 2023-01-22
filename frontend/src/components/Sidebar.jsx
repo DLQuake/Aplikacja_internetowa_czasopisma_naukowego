@@ -27,7 +27,7 @@ const Sidebar = () => {
 					</li>
 					<li>
 						<NavLink to={"/publikacje"}>
-							<IoLibrary /> Publikacje
+							<IoLibrary /> Artykuły
 						</NavLink>
 					</li>
 				</ul>
@@ -49,7 +49,7 @@ const Sidebar = () => {
 						<ul className="menu-list">
 							<li>
 								<NavLink to={"/publikacje/add"}>
-									<IoAddOutline /> Dodaj Publikacje
+									<IoAddOutline /> Dodaj nowy artykuł
 								</NavLink>
 							</li>
 						</ul>
