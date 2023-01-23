@@ -11,7 +11,7 @@ Temat pracy inżynierskiej polegający na stworzeniu aplikacji internetowej czas
 ## Krótki opis repozytorium
 W tym repozytorium powstała aplikacja internetowa czasopisma naukowego, która umożliwia wysyłanie publikacji przez autora, a następnie przechodzi przez proces recenzowania oraz redagowania oraz publikacji na stronie głównej.
 
-Praca inżynierska jest robiona pod kierunkiem [dr hab. Aleksandra Denisiuka](http://wmii.uwm.edu.pl/~denisjuk/)
+Praca inżynierska była robiona pod kierunkiem [dr hab. Aleksandra Denisiuka](http://wmii.uwm.edu.pl/~denisjuk/)
 
 ## Technologie jakie zostały użyte do pracy
 
@@ -57,9 +57,9 @@ W tym celu powstała właśnie ta aplikacja by rozwiązać przedstawiony problem
 Reszta informacji znajduje się w dokumentacji w rozdziale [Dokumentacja](#dokumentacja)
 
 ## Dokumentacja
-Dokumentacja początkowa znajduje się w pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Pocz%C4%85tkowa/Dokumentacja_pocz%C4%85tkowa.pdf)
+Dokumentacja początkowa znajduje się w postaci pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Pocz%C4%85tkowa/Dokumentacja_pocz%C4%85tkowa.pdf)
 
-Dokumentacja końcowa jest w trakcie pisania.
+Dokumentacja końcowa znajduje sie w postaci pliku PDF pod tym linkiem -> [LINK](https://github.com/DLQuake/Aplikacja_internetowa_czasopisma_naukowego/blob/main/Dokumentacja/Ko%C5%84cowa/Dokumentacja_ko%C5%84cowa.pdf)
 
 W folderze dokumentacja znajdują sie także pliki Microsoft Word, które można pobrać.
 
